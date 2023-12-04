@@ -66,3 +66,21 @@ Follow the steps below to sign in to Azure and access your files:
 11. You will use this editor to modify the agent prompt to improve its performance in answering questions about anomalies in the provided data set.
 
     ![The editor for the default agent prompt is displayed.](media/default-prompt-editor.png)
+
+## Review the dataset
+
+The FLLM anomaly agent is configured to connect to an Azure SQL database that contains information about rum products. We have included the data in the [rum.csv file](rum.csv) so you can explore the dataset and its attributes.
+
+The dataset contains information about various rum products. Here's a breakdown of its attributes which will be useful for you to understand before asking the FLLM agent questions about any anomalies:
+
+**Distributor**: This column represents the name of the company or entity that distributes the rum. For example, "Granqvist Beverage House AB".
+
+**BrandName**: This column includes the specific brand name of the rum. Examples from the dataset are "Rhum Selection Barbados", "Rhum Selection Guatemala", etc.
+
+**Type**: This column specifies the type of rum.
+
+**Price**: This column indicates the price of the rum in USD, and they are given in decimal values, like "30.83", "33.28", etc.
+
+**BottleVolume**: This column gives the volume of the rum bottle in milliliters, such as "512", "500", etc.
+
+**Description**: This column provides a brief description of the rum brand. For instance, it might include details about the origin, flavor profile, or any unique characteristics of the rum.
