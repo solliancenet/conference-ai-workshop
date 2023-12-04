@@ -50,3 +50,19 @@ Follow the steps below to sign in to Azure and access your files:
 6. Select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **user-profiles** container (3).
 
     ![The user-profiles storage container is selected.](media/storage-account-user-profiles.png)
+
+7. Scroll through the list of folders until you find one that contains the same number as the one in your `xxx_nnn@solliancetraining.onmicrosoft.com` account name, then select it. You may need to expand the Name column to view the full folder names.
+
+    ![The list of user profile folders is displayed.](media/user-profile-folders.png)
+
+8. Within your user folder, you will find subfolders that contain the files that define your agent and its properties. Select the **prompts** folder.
+
+9. Within the folder, you will find a folder named after your private agent (`anomaly_nnn`, where `nnn` matches the number in your user account). Open this folder.
+
+10. Right-click next to the `default.txt` file, then select **View/edit**.
+
+    ![The view/edit context menu for default.txt is highlighted.](media/edit-default-prompt.png)
+
+11. You will use this editor to modify the agent prompt to improve its performance in answering questions about anomalies in the provided data set.
+
+    ![The editor for the default agent prompt is displayed.](media/default-prompt-editor.png)
