@@ -23,9 +23,34 @@ FoundationaLLM provides a chat-based user interface (user portal) to interact wi
 
     ![The user portal is displayed as described above.](media/user-portal.png)
 
-## Access the Azure storage account
 
-FoundationaLLM (FLLM) follows a configuration-based approach to defining FLLM agents. This enables organizations to manage agents and their behaviors without requiring code modifications or new deployments. During this workshop, you will be modifying an anomaly agent to answer questions about rum product data stored in a SQL database. Each attendee has a private instance of the anomaly agent associated with their assigned account. You can only edit the metadata for your agent so you don't mess with anyone else's progress :)
+## Experimenting with a Knowledge Management agent
+As a first experience, you will interact with a knowledge management agent that can answer questions about FoundationaLLM, drawing on knowledge provided to the pre-trained LLM by FoundationaLLM.
+
+1. Login to FLLM.
+2. From the select an agent drop down, choose **default**.
+3. In that chat window, ask:
+`"What is your name?"`
+4. Read the response of the agent.
+5. At the bottom right, below the agent response select **View Prompt**.
+Take note of the User prompt (which was your question), and the Prompt template. The prompt template is the system prompt that is used to provide the LLM instruction about how to address the user. 
+
+Now ask:
+
+`"Can you present as bullets the key points about FoundationaLLM?"`
+
+Read the response.
+
+But how does the LLM, which a large language model pre-trained on Internet data know anything about FoundationaLLM whose website was not even around when the LLM was trained?
+
+Simply put, we gave it a text description of FoundationaLLM at the same time that we submitted the user prompt and system prompt to the LLM. This is an example of in-context learning, as you have provided the agent some knowledge that the underyling LLM was not trained upon to use as a reference when answering questions.
+
+In the next task, you will take a look at the source text that was configured for use by the agent, to give this knowledge. 
+
+
+## Access the Agent configuration
+
+FoundationaLLM (FLLM) follows a configuration-based approach to defining FLLM agents. This enables organizations to manage agents and their behaviors without requiring code modifications or new deployments. 
 
 Follow the steps below to sign in to Azure and access your files:
 
@@ -47,25 +72,40 @@ Follow the steps below to sign in to Azure and access your files:
 
     ![The storage account is highlighted.](media/resource-group-storage-account.png)
 
-6. Select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **user-profiles** container (3).
+6. Select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **foundationallm-source** container (3).
+
+7. Right-click next to the **about.txt** file, then select **View/edit**. That text is what is being provided to the LLM as context when answering questions about FoundationaLLM.
+
+While simple in approach, the illustrates a very powerful capability of LLM's that is few shot learning- they are able to learn new knowledge from text examples provided them. The key nuance here is that the underlying deep learning based model is not trained or fine tuned to give it this new knowledge, which enables the model to learn more quickly since training a model takes hours to days.
+
+
+
+## Experimenting with a Data Analytics agent
+
+During this workshop, you will be modifying an anomaly agent to answer questions about rum product data stored in a SQL database. Each attendee has a private instance of the anomaly agent associated with their assigned account. You can only edit the metadata for your agent so you don't mess with anyone else's progress :)
+
+1. Continuing within the Azure portal, select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **user-profiles** container (3).
 
     ![The user-profiles storage container is selected.](media/storage-account-user-profiles.png)
 
-7. Scroll through the list of folders until you find one that contains the same number as the one in your `xxx_nnn@solliancetraining.onmicrosoft.com` account name, then select it. You may need to expand the Name column to view the full folder names.
+2. Scroll through the list of folders until you find one that contains the same number as the one in your `xxx_nnn@solliancetraining.onmicrosoft.com` account name, then select it. You may need to expand the Name column to view the full folder names.
 
     ![The list of user profile folders is displayed.](media/user-profile-folders.png)
 
-8. Within your user folder, you will find subfolders that contain the files that define your agent and its properties. Select the **prompts** folder.
+3. Within your user folder, you will find subfolders that contain the files that define your agent and its properties. Select the **prompts** folder.
 
-9. Within the folder, you will find a folder named after your private agent (`anomaly_nnn`, where `nnn` matches the number in your user account). Open this folder.
+4. Within the folder, you will find a folder named after your private agent (`anomaly_nnn`, where `nnn` matches the number in your user account). Open this folder.
 
-10. Right-click next to the `default.txt` file, then select **View/edit**.
+5. Right-click next to the `default.txt` file, then select **View/edit**.
 
     ![The view/edit context menu for default.txt is highlighted.](media/edit-default-prompt.png)
 
-11. You will use this editor to modify the agent prompt to improve its performance in answering questions about anomalies in the provided data set.
+6. You will use this editor to modify the agent prompt to improve its performance in answering questions about anomalies in the provided data set. Make your edits to the prompt, Save the changes and then start a new chat in FoundationaLLM with the anomaly agent to see how your prompt performs. 
+**Important**: be sure that you keep the last line in your prompt what was provided ("You have access to the following tools:").
 
     ![The editor for the default agent prompt is displayed.](media/default-prompt-editor.png)
+
+Your challenge, should you choose to accept it, is to write an agent prompt that, given a description of a bottle of rum, can indicate if the record is an anomaly or not relative to an existing database of rum products. 
 
 ## Review the dataset
 

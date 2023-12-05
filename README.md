@@ -6,7 +6,7 @@ The purpose of this workshop is to teach you about large language models (LLMs) 
 
 ![FoundationaLLM](media/foundationallm-logo.svg)
 
-FoundationaLLM is a copilot platform that simplifies and streamlines knowledge management and analytic processes across your enterprise. It integrates with enterprise data sources and provides fine-grain security controls to guard against attacks. The solution is scalable and extensible to new data sources and orchestrators. It has been hardened against attacks by an LLM red team from inception.
+FoundationaLLM is a platform for building custom copilots that simplify and streamline knowledge management and analytic processes across your enterprise. It integrates with enterprise data sources and provides fine-grain security controls to guard against attacks. The solution is scalable and extensible to new data sources and orchestrators. It has been hardened against attacks by an LLM red team from inception.
 
 ## Participant guide
 
