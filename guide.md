@@ -8,6 +8,7 @@
   - [5. Experiment with a Data Analytics agent](#5-experiment-with-a-data-analytics-agent)
   - [6. Review the dataset](#6-review-the-dataset)
     - [Sample prompts](#sample-prompts)
+  - [Prize categories!](#prize-categories)
 
 ## 1. Access the user portal
 
@@ -167,3 +168,17 @@ The dataset contains information about various rum products. Here's a breakdown 
  - `LMDW / Neisson Distillery is the Distributor. Neisson Small Batch 7 is the Brand Name. The Type is dark rum. The Bottle Volume is 777 ml. It's price is $210.89.`
 
  - `Papa's Pilar is the Distributor. Rye-Finished Rum is the Brand Name. The Type is dark rum. The Bottle Volume is 750 ml. The Price is $50.99.`
+
+## Prize categories!
+
+We will be handing out prizes at the end of the event for the best agent responses in different categories:
+
+1. Best overall
+2. Funniest
+3. Most creative
+4. Biggest fail
+5. Fan favorite (up for a vote)
+
+Email your submissions to [training@solliance.net](mailto:training@solliance.net)
+
+Best of luck!
