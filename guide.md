@@ -1,6 +1,13 @@
 # Participant guide
 
-## Access the user portal
+- [Participant guide](#participant-guide)
+  - [1. Access the user portal](#1-access-the-user-portal)
+  - [2. Experiment with a Knowledge Management agent](#2-experiment-with-a-knowledge-management-agent)
+  - [3. Access the Agent configuration](#3-access-the-agent-configuration)
+  - [4. Experiment with a Data Analytics agent](#4-experiment-with-a-data-analytics-agent)
+  - [Review the dataset](#review-the-dataset)
+
+## 1. Access the user portal
 
 FoundationaLLM provides a chat-based user interface (user portal) to interact with LLM agents and ask questions about your data. Complete the following steps to access the web app:
 
@@ -23,32 +30,40 @@ FoundationaLLM provides a chat-based user interface (user portal) to interact wi
 
     ![The user portal is displayed as described above.](media/user-portal.png)
 
+## 2. Experiment with a Knowledge Management agent
 
-## Experimenting with a Knowledge Management agent
 As a first experience, you will interact with a knowledge management agent that can answer questions about FoundationaLLM, drawing on knowledge provided to the pre-trained LLM by FoundationaLLM.
 
-1. Login to FLLM.
-2. From the select an agent drop down, choose **default**.
-3. In that chat window, ask:
-`"What is your name?"`
-4. Read the response of the agent.
-5. At the bottom right, below the agent response select **View Prompt**.
-Take note of the User prompt (which was your question), and the Prompt template. The prompt template is the system prompt that is used to provide the LLM instruction about how to address the user. 
+1. From the agent select list, choose **default**.
 
-Now ask:
+    ![The default agent is selected.](media/select-default-agent.png)
 
-`"Can you present as bullets the key points about FoundationaLLM?"`
+2. In that chat window, ask:
 
-Read the response.
+    `"What is your name?"`
 
-But how does the LLM, which a large language model pre-trained on Internet data know anything about FoundationaLLM whose website was not even around when the LLM was trained?
+3. Read the response of the agent.
 
-Simply put, we gave it a text description of FoundationaLLM at the same time that we submitted the user prompt and system prompt to the LLM. This is an example of in-context learning, as you have provided the agent some knowledge that the underyling LLM was not trained upon to use as a reference when answering questions.
+4. At the bottom right, below the agent response select **View Prompt**.
 
-In the next task, you will take a look at the source text that was configured for use by the agent, to give this knowledge. 
+    ![The view prompt dialog is shown with the view prompt button highlighted.](media/name-view-prompt.png)
 
+    > [!HINT]
+    > Take note of the User prompt (which was your question), and the Prompt template. The prompt template is the system prompt that is used to provide the LLM instruction about how to address the user.
 
-## Access the Agent configuration
+5. Now ask:
+
+    `"Can you present as bullets the key points about FoundationaLLM?"`
+
+6. Read the response.
+
+    But how does the LLM, which a large language model pre-trained on Internet data know anything about FoundationaLLM whose website was not even around when the LLM was trained?
+
+    Simply put, we gave it a text description of FoundationaLLM at the same time that we submitted the user prompt and system prompt to the LLM. This is an example of in-context learning, as you have provided the agent some knowledge that the underyling LLM was not trained upon to use as a reference when answering questions.
+
+    In the next task, you will take a look at the source text that was configured for use by the agent, to give this knowledge.
+
+## 3. Access the Agent configuration
 
 FoundationaLLM (FLLM) follows a configuration-based approach to defining FLLM agents. This enables organizations to manage agents and their behaviors without requiring code modifications or new deployments. 
 
@@ -78,9 +93,7 @@ Follow the steps below to sign in to Azure and access your files:
 
 While simple in approach, the illustrates a very powerful capability of LLM's that is few shot learning- they are able to learn new knowledge from text examples provided them. The key nuance here is that the underlying deep learning based model is not trained or fine tuned to give it this new knowledge, which enables the model to learn more quickly since training a model takes hours to days.
 
-
-
-## Experimenting with a Data Analytics agent
+## 4. Experiment with a Data Analytics agent
 
 During this workshop, you will be modifying an anomaly agent to answer questions about rum product data stored in a SQL database. Each attendee has a private instance of the anomaly agent associated with their assigned account. You can only edit the metadata for your agent so you don't mess with anyone else's progress :)
 
@@ -105,7 +118,7 @@ During this workshop, you will be modifying an anomaly agent to answer questions
 
     ![The editor for the default agent prompt is displayed.](media/default-prompt-editor.png)
 
-Your challenge, should you choose to accept it, is to write an agent prompt that, given a description of a bottle of rum, can indicate if the record is an anomaly or not relative to an existing database of rum products. 
+Your challenge, should you choose to accept it, is to write an agent prompt that, given a description of a bottle of rum, can indicate if the record is an anomaly or not relative to an existing database of rum products.
 
 ## Review the dataset
 
