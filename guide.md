@@ -4,8 +4,10 @@
   - [1. Access the user portal](#1-access-the-user-portal)
   - [2. Experiment with a Knowledge Management agent](#2-experiment-with-a-knowledge-management-agent)
   - [3. Access the Agent configuration](#3-access-the-agent-configuration)
-  - [4. Experiment with a Data Analytics agent](#4-experiment-with-a-data-analytics-agent)
-  - [Review the dataset](#review-the-dataset)
+  - [4. Ask the anomaly agent about anomalies](#4-ask-the-anomaly-agent-about-anomalies)
+  - [5. Experiment with a Data Analytics agent](#5-experiment-with-a-data-analytics-agent)
+  - [6. Review the dataset](#6-review-the-dataset)
+    - [Sample prompts](#sample-prompts)
 
 ## 1. Access the user portal
 
@@ -97,11 +99,25 @@ Follow the steps below to sign in to Azure and access your files:
 
 While simple in approach, the illustrates a very powerful capability of LLMs that is few shot learning- they are able to learn new knowledge from text examples provided them. The key nuance here is that the underlying deep learning based model is not trained or fine tuned to give it this new knowledge, which enables the model to learn more quickly since training a model takes hours to days.
 
-## 4. Experiment with a Data Analytics agent
+## 4. Ask the anomaly agent about anomalies
+
+1. Return to <https://fllmad01chatuica.orangeisland-5b7e94c0.southcentralus.azurecontainerapps.io>.
+
+2. From the agent select list, choose your private **anomaly_nnn** agent.
+
+    ![The default agent is selected.](media/select-private-anomaly-agent.png)
+
+3. Use the following prompt to test out your agent:
+
+    - `Bacardi is the Distributor. El Diablo Gold is Brand Name. The Type is spiced rum. The Bottle Volume is 402 ml. Its Price is $402.83.`
+
+4. One thing you'll notice is that the agent currently does a terrible job evaluating the prompt. This is because the system prompt configured for the agent is incomplete.
+
+## 5. Experiment with a Data Analytics agent
 
 During this workshop, you will be modifying an anomaly agent to answer questions about rum product data stored in a SQL database. Each attendee has a private instance of the anomaly agent associated with their assigned account. You can only edit the metadata for your agent so you don't mess with anyone else's progress :)
 
-1. Continuing within the Azure portal, select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **user-profiles** container (3).
+1. Return to the Azure portal, select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **user-profiles** container (3).
 
     ![The user-profiles storage container is selected.](media/storage-account-user-profiles.png)
 
@@ -124,7 +140,7 @@ During this workshop, you will be modifying an anomaly agent to answer questions
 
 Your challenge, should you choose to accept it, is to write an agent prompt that, given a description of a bottle of rum, can indicate if the record is an anomaly or not relative to an existing database of rum products.
 
-## Review the dataset
+## 6. Review the dataset
 
 The FLLM anomaly agent is configured to connect to an Azure SQL database that contains information about rum products. We have included the data in the [rum.csv file](rum.csv) so you can explore the dataset and its attributes.
 
@@ -141,3 +157,13 @@ The dataset contains information about various rum products. Here's a breakdown 
 **BottleVolume**: This column gives the volume of the rum bottle in milliliters, such as "512", "500", etc.
 
 **Description**: This column provides a brief description of the rum brand. For instance, it might include details about the origin, flavor profile, or any unique characteristics of the rum.
+
+### Sample prompts
+
+ - `Bacardi is the Distributor. El Diablo Gold is Brand Name. The Type is spiced rum. The Bottle Volume is 402 ml. Its Price is $402.83.`
+
+ - `Kraken is the Distributor. Kraken Black is the Brand Name. The Type is spiced rum. The Bottle Volume is 700 ml. The Price is $21.72.`
+
+ - `LMDW / Neisson Distillery is the Distributor. Neisson Small Batch 7 is the Brand Name. The Type is dark rum. The Bottle Volume is 777 ml. It's price is $210.89.`
+
+ - `Papa's Pilar is the Distributor. Rye-Finished Rum is the Brand Name. The Type is dark rum. The Bottle Volume is 750 ml. The Price is $50.99.`
