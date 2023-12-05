@@ -48,7 +48,7 @@ As a first experience, you will interact with a knowledge management agent that 
 
     ![The view prompt dialog is shown with the view prompt button highlighted.](media/name-view-prompt.png)
 
-    > [!HINT]
+    > [!NOTE]
     > Take note of the User prompt (which was your question), and the Prompt template. The prompt template is the system prompt that is used to provide the LLM instruction about how to address the user.
 
 5. Now ask:
@@ -59,13 +59,13 @@ As a first experience, you will interact with a knowledge management agent that 
 
     But how does the LLM, which a large language model pre-trained on Internet data know anything about FoundationaLLM whose website was not even around when the LLM was trained?
 
-    Simply put, we gave it a text description of FoundationaLLM at the same time that we submitted the user prompt and system prompt to the LLM. This is an example of in-context learning, as you have provided the agent some knowledge that the underyling LLM was not trained upon to use as a reference when answering questions.
+    Simply put, we gave it a text description of FoundationaLLM at the same time that we submitted the user prompt and system prompt to the LLM. This is an example of in-context learning, as you have provided the agent some knowledge that the underlying LLM was not trained upon to use as a reference when answering questions.
 
     In the next task, you will take a look at the source text that was configured for use by the agent, to give this knowledge.
 
 ## 3. Access the Agent configuration
 
-FoundationaLLM (FLLM) follows a configuration-based approach to defining FLLM agents. This enables organizations to manage agents and their behaviors without requiring code modifications or new deployments. 
+FoundationaLLM (FLLM) follows a configuration-based approach to defining FLLM agents. This enables organizations to manage agents and their behaviors without requiring code modifications or new deployments.
 
 Follow the steps below to sign in to Azure and access your files:
 
@@ -89,9 +89,13 @@ Follow the steps below to sign in to Azure and access your files:
 
 6. Select **Storage browser** in the left-hand menu (1), expand **Blob containers** (2), then select the **foundationallm-source** container (3).
 
+    ![The foundationallm-source container is selected in the Azure storage account storage browser.](media/storage-browser-foundationallm-source.png)
+
 7. Right-click next to the **about.txt** file, then select **View/edit**. That text is what is being provided to the LLM as context when answering questions about FoundationaLLM.
 
-While simple in approach, the illustrates a very powerful capability of LLM's that is few shot learning- they are able to learn new knowledge from text examples provided them. The key nuance here is that the underlying deep learning based model is not trained or fine tuned to give it this new knowledge, which enables the model to learn more quickly since training a model takes hours to days.
+    ![The view/edit context menu item is highlighted.](media/edit-foundationallm-source-about.png)
+
+While simple in approach, the illustrates a very powerful capability of LLMs that is few shot learning- they are able to learn new knowledge from text examples provided them. The key nuance here is that the underlying deep learning based model is not trained or fine tuned to give it this new knowledge, which enables the model to learn more quickly since training a model takes hours to days.
 
 ## 4. Experiment with a Data Analytics agent
 
