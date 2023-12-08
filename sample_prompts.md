@@ -2,6 +2,7 @@
 
 hai_###
 =============
+
 0: How many survey results are there?
 1: How many cities appeared in the survey data?
 2: What is the age distribution of the people who responded?
@@ -10,8 +11,10 @@ hai_###
 5: What is the most popular employer policy?
 6: Show me some example rows from the survey data
 7: Give me five more questions that I can ask about this data
+
 sdzwa
 =============
+
 0: When was the zoo founded?
 1: Tell me about Elephant Valley
 2: Help me explain what's cool about Elephant Valley to my 5 year old
@@ -19,8 +22,10 @@ sdzwa
 4:Tell me about the Zoo's conservation science efforts
 5: What is the Zoo doing with Mountain Lions?
 6: What names of people do you know from the Zoo?
+
 weather-sec
 ==============================
+
 0: How many Observers are there?
 1: How many Stations are there?
 2: In what state are Stations located?
@@ -29,6 +34,7 @@ weather-sec
 5: How many hail reports are there?
 6: What was the largest size of hail reported?
 7: What damage is seen in reported hail storms?
+
 anomaly_###
 ==============================
 0: Bacardi is the Distributor. El Diablo Gold is Brand Name. The Type is spiced rum. The Bottle Volume is 402 ml. Its Price is $402.83.
